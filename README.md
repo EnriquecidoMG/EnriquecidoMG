@@ -9,7 +9,7 @@ Hi! I'm **Enrique**, a passionate programmer with experience in _HTML, Godot, C#
 
 🎮 Favourite console: _Atari 2600_
 
-<iframe allow="" frameborder="" height="" sandbox="" src="https://embed.music.apple.com/es/playlist/overcharge/pl.u-ZmblljpfV20VldN"></iframe>
+
 
 # <p align="right"> ![monkey_footer-ezgifcom-resize](https://github.com/user-attachments/assets/ea558336-587e-44e4-ae8b-1e33f71b93e5) </p>
 
