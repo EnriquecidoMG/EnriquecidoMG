@@ -1,471 +1,632 @@
-
-.rubik-base {
-    font-family: "Rubik", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.rubik-mono-one-regular {
-    font-family: "Rubik Mono One", serif;
-    font-weight: 400;
-    font-style: normal;
+@font-face {
+    font-family: 'WiiU';
+    src: url(resources/fonts/wiiuFont.ttf);
 }
 
 
-.photo {
-    width: 400px;
-}
-
-.photo img {
-    display: block;
-    width: 100%;
-}
-
-.photostack {
-    width: 55%;
-    max-width: 400px;
-    transition: 0.25s ease;
-
-    &:hover {
-        transform: rotate(5deg);
-
-        .card:before {
-            transform: translatey(-2%) rotate(-4deg);
-        }
-
-        .card:after {
-            transform: translatey(2%) rotate(4deg);
-        }
-    }
-}
-
-.photocard {
-    aspect-ratio: 3 / 2;
-    border: 4px solid;
-    background-color: #fff;
-    position: relative;
-    transition: 0.15s ease;
-    cursor: pointer;
-    padding: 5% 5% 15% 5%;
-
-    &:before,
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        border: 4px solid;
-        background-color: #fff;
-        transform-origin: center center;
-        z-index: -1;
-        transition: 0.15s ease;
-        top: 0;
-        left: 0;
-    }
-
-    &:before {
-        transform: translatey(-2%) rotate(-6deg);
-    }
-
-    &:after {
-        transform: translatey(2%) rotate(6deg);
-    }
-}
-
-.photoimage {
-    width: 100%;
-    border: 4px solid;
-    background-color: #eee;
-    aspect-ratio: 1 / 1;
-    position: relative;
-}
-
-.browser-warning {
-    margin-bottom: 4rem;
-}
-
-@supports (aspect-ratio: 1 / 1) {
-    .browser-warning {
-        display: none;
-    }
+html {
+    height: 100vh;
+    cursor: url('resources/cursor/normal-resize-adj.png'), auto;
 }
 
 
-
-.card-row {
-    width: 50%;
+body {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite varias filas */
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    /* Ajusta el ancho para controlar las filas */
+    gap: 40px;
+    /* Espacio entre cuadrados */
+}
+
+.dock {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    /* Permite varias filas */
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    /* Ajusta el ancho para controlar las filas */
+    gap: 40px;
+    /* Espacio entre cuadrados */
+    bottom: 20px;
+}
+
+.dock img {
+    width: 100px;
+    transition: 0.1s ease-in-out;
+
+    cursor: url(resources/cursor/pointer-resize-adj.png), auto;
+}
+
+.dock img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+}
+
+
+#disc {
+    width: 30%;
+    position: absolute;
+    top: -45%;
+    transition: 0.4s ease-in-out;
+}
+
+#disc:hover {
+    top: -25%;
+    animation-name: disc;
+    /* Nombre de la animación definida en @keyframes */
+    animation-duration: 6s;
+    /* Duración de cada giro (3 segundos) */
+    animation-iteration-count: infinite;
+    /* Repite la animación infinitamente */
+    animation-timing-function: linear;
+}
+
+@keyframes disc {
+    from {
+        transform: rotate(0deg);
+        /* Empieza sin rotación */
+    }
+
+    to {
+        transform: rotate(360deg);
+        /* Termina con una rotación completa */
+    }
+}
+
+.square {
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+
+    background-color: rgba(206, 206, 206, 0.411);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+
+    transition: 0.2s ease-in-out;
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+}
+
+.square:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 152, 253, 0.288);
+    backdrop-filter: blur(6px);
+    cursor: url("resources/cursor/pointer-resize-adj.png");
+}
+
+.square:hover::after {
+    transform: scale(0.90);
+    cursor: url("resources/cursor/pointer-resize-adj.png");
+
+}
+
+.square img {
+    width: 120px;
+    border-radius: 20px;
+    transition: 0.3s ease-in-out;
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+}
+
+.square:hover img {
+    filter: brightness(1.2);
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+}
+
+.square img:hover {}
+
+
+.rectangle {
+    width: 335px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+
+    background-color: rgba(206, 206, 206, 0.411);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+    transition: 0.2s ease-in-out;
+}
+
+.rectangle:hover {
+    transform: scale(1.05);
+    background-color: rgba(0, 152, 253, 0.288);
+    backdrop-filter: blur(6px);
+}
+
+.rectangle:hover #skills-button {
+    background-image: url(resources/main-menu/info/skillshover.png);
+}
+
+.rectangle:hover #info-button {
+    background-image: url(resources/main-menu/info/aboutmehover.png);
+}
+
+.rectangle:hover::after {
+    transform: scale(0.90);
+
+}
+
+.rectangle img {
+    width: 300px;
+    height: 115px;
+    border-radius: 35px;
+    transition: 0.3s ease-in-out;
+
+    cursor: url("resources/cursor/pointer-resize.png-adj"), auto;
+
+}
+
+.rectangle:hover img {
+    filter: brightness(1.05);
+}
+
+.rectangle img:hover {
+    cursor: pointer;
+
+}
+
+#info-button {
+    width: 300px;
+    height: 115px;
+    border-radius: 35px;
+    transition: 0.3s ease-in-out;
+    background-image: url(resources/main-menu/info/aboutme.png);
+
+    cursor: url("resources/cursor/pointer-resize.png-adj"), auto;
+}
+
+/*
+#info-button:hover{
+    background-image: url(resources/main-menu/info/aboutmehover.png);
+}
+*/
+#skills-button {
+    width: 300px;
+    height: 115px;
+    border-radius: 35px;
+    transition: 0.3s ease-in-out;
+    background-image: url(resources/main-menu/info/skills.png);
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+}
+
+/*
+#skills-button:hover{
+    background-image: url(resources/main-menu/info/skillshover.png);
+}
+*/
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#player {
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    cursor: text;
+
+    background-image: url(resources/playeranimated.gif);
+}
+
+#player:hover {
+    background-image: url(resources/playerhover.png);
+}
+
+
+
+.tooltiptext {
+    font-family: WiiU;
+
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    bottom: 240px;
+    transition: 0.2s ease-in-out;
+    transform: scale(0.1);
+
+}
+
+.tooltiptext::after {
+    transform: scale(1);
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+#player:hover .tooltiptext {
+    transform: scale(1);
+    visibility: visible;
+}
+
+
+
+.aboutme-show {
+    width: 60%;
+    height: fit-content;
+    visibility: visible;
+
+    position: absolute;
+
+    padding: 2rem;
+
+    background-color: rgba(255, 255, 255, 0.808);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+    z-index: 1;
+
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgba(230, 230, 230, 0.808);
+    transition: 0.2s ease-in-out;
+}
+
+.aboutme-hide {
+    position: absolute;
+    visibility: hidden;
+
+
+
+    width: 30%;
+    height: 30%;
+    opacity: 0;
+
+    position: absolute;
+
+    background-color: rgba(255, 255, 255, 0.808);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+    z-index: 1;
+
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgba(230, 230, 230, 0.808);
+    transition: 0.2s ease-in-out;
+}
+
+
+.skills-show {
+    width: 60%;
+    height: fit-content;
+    visibility: visible;
+
+
+    position: absolute;
+
+    padding: 2rem;
+
+    background-color: rgba(255, 255, 255, 0.808);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+    z-index: 1;
+
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgba(230, 230, 230, 0.808);
+    transition: 0.2s ease-in-out;
+}
+
+.skills-hide {
+    position: absolute;
+    visibility: hidden;
+
+    width: 30%;
+    height: 30%;
+    opacity: 0;
+
+    position: absolute;
+
+    background-color: rgba(255, 255, 255, 0.808);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+    z-index: 1;
+
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgba(230, 230, 230, 0.808);
+    transition: 0.2s ease-in-out;
+}
+
+.skills-hide h2{
+    font-weight: 0px;
+    font-family: WiiU;
+    color: #abd2ff;
+}
+
+
+.aboutme-show h2 {
+    margin-top: 0px;
+    font-family: WiiU;
+    color: #00ff1b;
+    font-weight: normal;
+    transition: 0.4s ease-in-out;
+    text-shadow: 0px 2px 6px rgba(52, 52, 52, 0.619);
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+}
+
+.aboutme-show h2:hover {
+    transform: translateX(5px);
+
+}
+
+.aboutme-show p {
+    font-family: WiiU;
+    color: #535353;
+    font-weight: normal;
+    transition: 0.4s ease-in-out;
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+}
+
+.aboutme-hide p {
+    font-size: 0px;
+    font-family: WiiU;
+    color: #535353;
+    font-weight: normal;
+    transition: 0.4s ease-in-out;
+}
+
+.skills-show p {
+    font-family: WiiU;
+    color: #535353;
+    font-weight: normal;
+    transition: 0.4s ease-in-out;
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+}
+
+.aboutme-hide h2 {
+    font-family: WiiU;
+    color: #abffb4;
+    font-weight: normal;
+
+}
+
+
+
+
+.skills-show h2 {
+    color: #00afff;
+    margin-top: 0px;
+    font-family: WiiU;
+    font-weight: normal;
+    transition: 0.4s ease-in-out;
+    text-shadow: 0px 2px 6px rgba(192, 192, 192, 0.619);
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+}
+
+.skills-show h2:hover {
+    transform: translateX(5px);
+
+}
+
+
+
+.content-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 2rem;
+}
+
+.aboutme-show img {
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.479);
+}
+
+.aboutme-show img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.363);
+
+}
+
+.aboutme-hide img {
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.479);
+    width: 100px;
+}
+
+#halotext {
+    font-weight: normal;
+    transition: 0.3s ease-in-out;
+}
+
+#halotext:hover {
+    color: green;
+}
+
+#jimtext {
+    font-weight: normal;
+    transition: 0.3s ease-in-out;
+}
+
+#jimtext:hover {
+    color: rgb(226, 25, 166);
+}
+
+#sunsettext {
+    font-weight: normal;
+    transition: 0.3s ease-in-out;
+}
+
+#sunsettext:hover {
+    color: rgb(255, 111, 0);
+}
+
+#gittext {
+    font-weight: normal;
+    transition: 0.3s ease-in-out;
+}
+
+#gittext:hover {
+    color: rgb(141, 0, 188);
+}
+
+
+#rasptext {
+    font-weight: normal;
+    transition: 0.3s ease-in-out;
+}
+
+#rasptext:hover {
+    color: rgb(188, 0, 66);
+}
+
+
+
+.bubbleholder {
+    display: flex;
+
+    margin: auto;
+    width: 60%;
+    height: fit-content;
+
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    background-color: #5a42f300;
+    flex-wrap: wrap;
 }
 
 
-.card {
-    width: auto;
-    height: auto;
-    border-radius: 20px;
-    padding: 5px;
-    box-shadow: rgba(0, 0, 0, 0.646) 0 15px 30px -5px;
-    background-image: linear-gradient(144deg, #5b5b5b, #979797 50%, #dcdcdc);
-    margin: 5px;
-    transition: 0.2s ease-in-out;
-}
-
-.card:hover{
-    transform: scale(1.02);
-}
-
-.card__content {
-    background: rgb(47, 47, 47);
-    border-radius: 17px;
-    width: 100%;
-    height: 100%;
-
-}
-
-body {
-    width: 98%;
-    text-align: center;
-    /*background-color: rgb(37, 37, 37);*/
-    background-image: url(card_0011.jpg);
-    background-size: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-main {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    font-family: Rubik;
-}
-
-img{
-    width: 100%;
-    border-radius: 15px;
-}
-
-#profilephoto{
-    border-radius: 15px;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    
-}
-
-#profilephoto img{
-    transition: 0.5s;
-}
-
-#profilephoto img:hover{
-    transform: scale(1.3);
-}
-
-.Tcard{
-    /*
-    box-shadow: rgba(0, 0, 0, 0.2) 0 15px 30px -5px;
-    background-image: linear-gradient(144deg, #5b5b5b, #979797 50%, #dcdcdc);
-    margin: 5px;
-    transition: 0.2s ease-in-out;
-    */
-    width: auto;
-    height: auto;
-    border-radius: 20px;
-    padding: 5px;
-}
-
-.Tcard__content{
-    background: rgba(0, 0, 0, 0.267);
-    border-radius: 17px;
-    width: 100%;
-    height: 100%;
-}
-
-#cardone{
-    
-    font-family: Rubik Mono One;
-    color: #ffffff;
-    text-align: right;
-    margin-right: 10px;
-    width: 500px;
-    height: 150px;
-    font-size: 26px;
-    white-space: inherit;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    
-}
-
-#bio{
-    color: #eee;
-
-    width: 400px;
-    height: 250px;
-}
-
-#bio p{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-#animated{
-    width: 250px;
-    height: 250px;
-}
-
-#music-cover-art{
-    margin-top: 20px;
-    width: 150px;
-    box-shadow: 3px 3px 15px rgb(0, 0, 0),
-                   -3px -3px 15px rgb(58, 58, 58);
-}
-
-#knowledge{
-    color: #eee;
-    width: 325px;
-    height: 300px;
-}
-
-#skills{
-    color: #eee;
-    width: 325px;
-    height: 300px;
+.skills-hide .skills-button{
+    width: 0px;
+    font-weight: 0px;
+    font-family: WiiU;
+    margin: 0px;
+    height: 0px;
 }
 
 
-
-/*------ Settings ------*/
-.container {
-    --color: white;
-    --size: 45px;
+.skills-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    cursor: pointer;
-    font-size: var(--size);
-    user-select: none;
-    fill: var(--color);
-  }
-  
-  .container .play {
-    position: absolute;
-    animation: keyframes-fill 0.3s;
-  }
-  
-  .container .pause {
-    position: absolute;
-    display: none;
-    animation: keyframes-fill 0.3s;
-  }
-  
-  /* ------ On check event ------ */
-  .container input:checked ~ .play {
-    display: none;
-  }
-  
-  .container input:checked ~ .pause {
-    display: block;
-  }
-  
-  /* ------ Hide the default checkbox ------ */
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* ------ Animation ------ */
-  @keyframes keyframes-fill {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-  
-    50% {
-      transform: scale(1.1);
-    }
-  }
-  
 
+    margin-top: 0px;
+    margin-bottom: 0px;
 
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    border-radius: 100%;
+    font-size: 90%;
 
+    color: rgb(62, 62, 62);
 
+    background-color: rgba(255, 255, 255, 0.203);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 5px 5px rgba(43, 43, 43, 0.619);
 
+    transition: 0.3s ease-in-out;
 
-
-
-/* From Uiverse.io by aadium */ 
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*
-    background-color: #494949;
-    box-shadow: 0px 0px 15px #00000027;
-    */
-    padding: 15px 10px;
-    border-radius: 5em;
-    width: 60%;
-  }
-  
-  .social-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 10px;
-    background-color: #fff;
-    box-shadow: 0px 0px 4px #00000027;
-    transition: 0.3s;
-  }
-  
-  .social-button:hover {
-    background-color: #f2f2f2;
-    box-shadow: 0px 0px 6px 3px #00000027;
-  }
-  
-  .social-buttons svg {
-    transition: 0.3s;
-    height: 20px;
-  }
-  
-  .facebook {
-    background-color: #3b5998;
-  }
-  
-  .facebook svg {
-    fill: #f2f2f2;
-  }
-  
-  .facebook:hover svg {
-    fill: #3b5998;
-  }
-  
-  .github {
-    background-color: #21103f;
-  }
-  
-  .github svg {
-    width: 25px;
-    height: 25px;
-    fill: #f2f2f2;
-  }
-  
-  .github:hover svg {
-    fill: #333;
-  }
-  
-  .linkedin {
-    background-color: #0077b5;
-  }
-  
-  .linkedin svg {
-    fill: #f2f2f2;
-  }
-  
-  .linkedin:hover svg {
-    fill: #0077b5;
-  }
-  
-  .instagram {
-    background-color: #c13584;
-  }
-  
-  .instagram svg {
-    fill: #f2f2f2;
-  }
-  
-  .instagram:hover svg {
-    fill: #c13584;
-  }
-  
-
-
-
-
-
-.proyectos {
-width: 210px;
-height: 220px;
-border-radius: 8px;
-background: linear-gradient(145deg, #33333300, #00000000);
-display: flex;
-flex-direction: column;
-gap: 5px;
-padding: 0.4em;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-overflow: hidden;
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 }
 
-.proyectos p {
-flex: 1;
-overflow: hidden;
-cursor: pointer;
-border-radius: 8px;
-transition: flex 0.5s;
-background: linear-gradient(145deg, #21212100, #00000000);
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100%;
+.skills-button p{
+
+
 }
 
-.proyectos p:hover {
-flex: 4;
+.skills-button:hover {
+    /*width: 70px;
+    height: 70px;
+
+    padding: 1.2rem;
+    font-size: 100%;*/
+
+    transform: scale(1.4);
+    color: rgb(60, 172, 207);
+    box-shadow: 0px 3px 2px rgba(90, 192, 255, 0.619);
 }
 
-.proyectos p span {
-padding: 0.2em;
-text-align: center;
-transform: rotate(-0deg);
-transition: transform 0.5s;
-text-transform: uppercase;
-color: #00ffeb;
-font-weight: "bold";
-letter-spacing: 0.1em;
-position: relative;
-z-index: 1;
+.skills-button:hover p{
+    color: rgb(68, 182, 216);
 }
 
-.proyectos p:hover span {
-transform: rotate(0);
+
+table{
+    gap: 0px;
+    margin: 20px;
+
 }
 
-.proyectos p::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: rgba(255, 255, 255, 0.1);
-z-index: 0;
-transition: opacity 0.5s;
-pointer-events: none;
-opacity: 0;
-border-radius: 20px;
+th{
+    font-family: WiiU;
+    font-weight: normal;
+    margin-bottom: 0px;
 }
 
-.proyectos p:hover::before {
-opacity: 1;
+td{
+    margin-top: 0px;
 }
-  
-.proyectos img{
-    width: 100%;
+
+tr{
+    margin-top: 0px;
 }
