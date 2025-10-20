@@ -187,7 +187,7 @@ body {
     border-radius: 35px;
     transition: 0.3s ease-in-out;
 
-    cursor: url("resources/cursor/pointer-resize.png-adj"), auto;
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 
 }
 
@@ -207,7 +207,7 @@ body {
     transition: 0.3s ease-in-out;
     background-image: url(resources/main-menu/info/aboutme.png);
 
-    cursor: url("resources/cursor/pointer-resize.png-adj"), auto;
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 }
 
 /*
