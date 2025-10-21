@@ -245,7 +245,7 @@ body {
     position: absolute;
     bottom: 0px;
     right: 10px;
-    cursor: text;
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 
     background-image: url(resources/playeranimated.gif);
 }
@@ -390,7 +390,7 @@ body {
     transition: 0.2s ease-in-out;
 }
 
-.skills-hide h2{
+.skills-hide h2 {
     font-weight: 0px;
     font-family: WiiU;
     color: #abd2ff;
@@ -554,7 +554,7 @@ body {
 }
 
 
-.skills-hide .skills-button{
+.skills-hide .skills-button {
     width: 0px;
     font-weight: 0px;
     font-family: WiiU;
@@ -589,10 +589,7 @@ body {
     cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 }
 
-.skills-button p{
-
-
-}
+.skills-button p {}
 
 .skills-button:hover {
     /*width: 70px;
@@ -606,27 +603,143 @@ body {
     box-shadow: 0px 3px 2px rgba(90, 192, 255, 0.619);
 }
 
-.skills-button:hover p{
+.skills-button:hover p {
     color: rgb(68, 182, 216);
 }
 
 
-table{
+table {
     gap: 0px;
     margin: 20px;
 
 }
 
-th{
+th {
     font-family: WiiU;
     font-weight: normal;
     margin-bottom: 0px;
 }
 
-td{
+td {
     margin-top: 0px;
 }
 
-tr{
+tr {
     margin-top: 0px;
+}
+
+
+.container-mov{
+    display: none;
+    width: 0px;
+}
+
+
+/* Adaptado a varias Pantallas */
+
+/* Adaptación responsive */
+@media only screen and (max-width: 1400px) {
+
+    .dock img {
+
+        width: 80px;
+
+    }
+
+
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+
+    .dock {
+
+        width: 60%;
+
+    }
+
+    .dock img {
+
+        width: 70px;
+
+    }
+
+
+}
+
+
+/* Versión ultra compacta (para móviles muy pequeños, <500px) */
+@media only screen and (max-width: 800px) {
+
+    html {
+        display: flex;
+    }
+
+    body {
+        display: flex;
+        width: 100%;
+        height: max-content;
+        text-align: center;
+    }
+
+    .container {
+        display: none;
+        width: 0px;
+    }
+
+    .container img {
+        width: 0px;
+    }
+
+    .container-mov {
+        margin-top: 30%;
+        
+
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite varias filas */
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        /* Ajusta el ancho para controlar las filas */
+        gap: 40px;
+        /* Espacio entre cuadrados */
+    }
+
+    .dock {
+        display: none;
+    }
+
+    .player-mobile {
+        width: 100%;
+        margin-bottom: 0px;
+        bottom: 0px;
+        display: flex;
+    }
+
+    #player {
+        width: 0px;
+        height: 0px;
+
+        display: none;
+
+    }
+
+
+    #player-mov {
+        margin-top: 100px;
+        width: 270px;
+        height: 270px;
+        right: 10px;
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+        background-image: url(resources/playeranimated.gif);
+    }
+
+    #player-mov:hover {
+        background-image: url(resources/playerhover.png);
+    }
+
+
 }
