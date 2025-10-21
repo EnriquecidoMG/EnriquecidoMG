@@ -629,7 +629,7 @@ tr {
 }
 
 
-.container-mov{
+.container-mov {
     display: none;
     width: 0px;
 }
@@ -694,7 +694,7 @@ tr {
 
     .container-mov {
         margin-top: 30%;
-        
+
 
         display: flex;
         flex-wrap: wrap;
@@ -743,7 +743,7 @@ tr {
 
 
 
-    
+
 
 }
 
@@ -753,7 +753,7 @@ tr {
 
     .container-mov {
         margin-top: 30%;
-        
+
 
         display: flex;
         flex-wrap: wrap;
@@ -797,113 +797,113 @@ tr {
 
 
 
-#myVideo {
-    position: absolute;
-    right: -200px;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-}
+    #myVideo {
+        position: fixed;
+        right: -200px;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
 
 
 
     .square {
-    width: 100px;
-    height: 100px;
+        width: 100px;
+        height: 100px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        border-radius: 40px;
 
-    background-color: rgba(206, 206, 206, 0.411);
-    /* Fondo blanco semitransparente */
-    backdrop-filter: blur(10px);
-
-
-    transition: 0.2s ease-in-out;
-
-    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
-}
+        background-color: rgba(206, 206, 206, 0.411);
+        /* Fondo blanco semitransparente */
+        backdrop-filter: blur(10px);
 
 
-.square img {
-    width: 80px;
-    border-radius: 10px;
-    transition: 0.3s ease-in-out;
+        transition: 0.2s ease-in-out;
 
-    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
-
-}
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+    }
 
 
+    .square img {
+        width: 80px;
+        border-radius: 10px;
+        transition: 0.3s ease-in-out;
+
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+    }
 
 
 
-.rectangle {
-    width: 240px;
-    height: 100px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    border-radius: 30px;
-
-    background-color: rgba(206, 206, 206, 0.411);
-    /* Fondo blanco semitransparente */
-    backdrop-filter: blur(10px);
-
-    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
-
-    transition: 0.2s ease-in-out;
-}
 
 
+    .rectangle {
+        width: 240px;
+        height: 100px;
 
-.rectangle img {
-    width: 240px;
-    height: 65px;
-    border-radius: 25px;
-    transition: 0.3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        border-radius: 30px;
 
-    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+        background-color: rgba(206, 206, 206, 0.411);
+        /* Fondo blanco semitransparente */
+        backdrop-filter: blur(10px);
 
-}
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+        transition: 0.2s ease-in-out;
+    }
 
 
-#info-button {
-    width: 220px;
-    height: 80px;
-    border-radius: 25px;
-    transition: 0.3s ease-in-out;
-    background-image: url(resources/main-menu/info/aboutme.png);
 
-    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+    .rectangle img {
+        width: 240px;
+        height: 65px;
+        border-radius: 25px;
+        transition: 0.3s ease-in-out;
 
-    background-size: cover;
-}
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 
-/*
+    }
+
+
+    #info-button {
+        width: 220px;
+        height: 80px;
+        border-radius: 25px;
+        transition: 0.3s ease-in-out;
+        background-image: url(resources/main-menu/info/aboutme.png);
+
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+        background-size: cover;
+    }
+
+    /*
 #info-button:hover{
     background-image: url(resources/main-menu/info/aboutmehover.png);
 }
 */
-#skills-button {
-    width: 220px;
-    height: 80px;
-    border-radius: 25px;
-    transition: 0.3s ease-in-out;
-    background-image: url(resources/main-menu/info/skills.png);
+    #skills-button {
+        width: 220px;
+        height: 80px;
+        border-radius: 25px;
+        transition: 0.3s ease-in-out;
+        background-image: url(resources/main-menu/info/skills.png);
 
-    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 
-    background-size: cover;
-}
+        background-size: cover;
+    }
 
 
 
