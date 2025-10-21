@@ -743,3 +743,157 @@ tr {
 
 
 }
+
+
+@media only screen and (max-width: 380px) {
+
+
+    .container-mov {
+        margin-top: 30%;
+        
+
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite varias filas */
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        /* Ajusta el ancho para controlar las filas */
+        gap: 40px;
+        /* Espacio entre cuadrados */
+    }
+
+    .dock {
+        display: none;
+    }
+
+    .player-mobile {
+        width: 100%;
+        margin-bottom: 0px;
+        bottom: 0px;
+        display: flex;
+    }
+
+
+
+    #player-mov {
+        margin-top: 50px;
+        width: 200px;
+        height: 200px;
+        right: 10px;
+        cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+        background-image: url(resources/playeranimated.gif);
+        background-size: cover;
+    }
+
+    #player-mov:hover {
+        background-image: url(resources/playerhover.png);
+    }
+
+
+
+
+
+
+
+
+    .square {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 40px;
+
+    background-color: rgba(206, 206, 206, 0.411);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+
+    transition: 0.2s ease-in-out;
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+}
+
+
+.square img {
+    width: 80px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+}
+
+
+
+
+
+.rectangle {
+    width: 240px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+
+    background-color: rgba(206, 206, 206, 0.411);
+    /* Fondo blanco semitransparente */
+    backdrop-filter: blur(10px);
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+    transition: 0.2s ease-in-out;
+}
+
+
+
+.rectangle img {
+    width: 240px;
+    height: 65px;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+}
+
+
+#info-button {
+    width: 220px;
+    height: 80px;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+    background-image: url(resources/main-menu/info/aboutme.png);
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+    background-size: cover;
+}
+
+/*
+#info-button:hover{
+    background-image: url(resources/main-menu/info/aboutmehover.png);
+}
+*/
+#skills-button {
+    width: 220px;
+    height: 80px;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+    background-image: url(resources/main-menu/info/skills.png);
+
+    cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
+
+    background-size: cover;
+}
+
+
+}
