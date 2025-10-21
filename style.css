@@ -750,6 +750,11 @@ tr {
 
 @media only screen and (max-width: 380px) {
 
+    html,
+    body {
+        height: 100%;
+    }
+
 
     .container-mov {
         margin-top: 30%;
@@ -771,6 +776,7 @@ tr {
     }
 
     .player-mobile {
+        position: relative;
         width: 100%;
         margin-bottom: 0px;
         bottom: 0px;
@@ -804,6 +810,8 @@ tr {
         min-width: 100%;
         min-height: 100%;
         z-index: -1;
+
+        display: none;
     }
 
 
@@ -903,6 +911,129 @@ tr {
         cursor: url("resources/cursor/pointer-resize-adj.png"), auto;
 
         background-size: cover;
+    }
+
+
+
+
+    #animatedmobile {
+        background: #61d2ff;
+        background: -moz-linear-gradient(-45deg, #a9dcf0 0%, #6db8ff 100%);
+        background: -webkit-linear-gradient(-45deg, #b1e9ff 0%, #8bc7ff 100%);
+        background: linear-gradient(135deg, #ade4fa 0%, #9aceff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adef', endColorstr='#0076e5', GradientType=1);
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        z-index: -1;
+    }
+
+    #animatedmobile-inside {
+        position: relative;
+        min-width: 960px;
+        max-width: 1280px;
+        height: auto;
+        min-height: 100%;
+        margin: 0px auto;
+        padding: 0px auto;
+        overflow: visible;
+    }
+
+    #circle-small {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0s;
+        position: absolute;
+        top: 200px;
+        left: -150px;
+        background: #fff;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        opacity: 0.4;
+    }
+
+    #circle-medium {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0.3s;
+        position: absolute;
+        top: 50px;
+        left: -300px;
+        background: #fff;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        opacity: 0.3;
+    }
+
+    #circle-large {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0.6s;
+        position: absolute;
+        top: -100px;
+        left: -450px;
+        background: #fff;
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        opacity: 0.2;
+    }
+
+    #circle-xlarge {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0.9s;
+        position: absolute;
+        top: -250px;
+        left: -600px;
+        background: #fff;
+        width: 1200px;
+        height: 1200px;
+        border-radius: 50%;
+        opacity: 0.1;
+    }
+
+    #circle-xxlarge {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 1.2s;
+        position: absolute;
+        top: -400px;
+        left: -750px;
+        background: #fff;
+        width: 1500px;
+        height: 1500px;
+        border-radius: 50%;
+        opacity: 0.05;
+    }
+
+    @-webkit-keyframes circle-small-scale {
+        0% {
+            -webkit-transform: scale(1.0);
+        }
+
+        100% {
+            -webkit-transform: scale(1.1);
+        }
+    }
+
+    @keyframes circle-small-scale {
+        0% {
+            transform: scale(1.0);
+        }
+
+        100% {
+            transform: scale(1.1);
+        }
     }
 
 
