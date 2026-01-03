@@ -826,6 +826,7 @@ tr {
         font-weight: bold;
         border-radius: 40px;
 
+
         background-color: rgba(206, 206, 206, 0.411);
         /* Fondo blanco semitransparente */
         backdrop-filter: blur(10px);
